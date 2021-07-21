@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>clipgrab</id>
-    <version>3.8.5</version>
+    <version>3.9.6</version>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/clipgrab</packageSourceUrl>
-    <owners>chocolatey</owners>
+    <owners>chocolatey-community</owners>
     <title>Clipgrab</title>
     <authors>Philipp Schmieder Medien</authors>
     <projectUrl>https://clipgrab.org/</projectUrl>

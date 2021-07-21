@@ -3,15 +3,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>seafile-client</id>
-    <version>7.0.3</version>
+    <version>7.0.10</version>
     <title>Seafile (Windows Client)</title>
-    <owners>chocolatey</owners>
+    <owners>chocolatey-community</owners>
     <authors>Seafile Ltd.</authors>
     <licenseUrl>https://github.com/haiwen/seafile-client/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://www.seafile.com/en/home/</projectUrl>
     <projectSourceUrl>https://github.com/haiwen/seafile-client</projectSourceUrl>
     <bugTrackerUrl>https://github.com/haiwen/seafile-client/issues</bugTrackerUrl>
-    <docsUrl>https://www.seafile.com/en/help/</docsUrl>
+    <docsUrl>https://download.seafile.com/published/seafile-user-manual/home.md</docsUrl>
     <mailingListUrl>https://forum.seafile.com/</mailingListUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@65cff22d071fb30b82b8f2bdee89211b541520c7/icons/seafile-client.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -26,7 +26,7 @@ Seafile allows users to create groups with file syncing, wiki, and discussion to
 
 ]]></description>
     <summary>File Syncing and Collaboration for Teams</summary>
-    <releaseNotes>https://seacloud.cc/group/3/wiki/client-changelog</releaseNotes>
+    <releaseNotes>https://download.seafile.com/published/seafile-manual/changelog/client-changelog.md</releaseNotes>
     <copyright>Copyright ©2016 Seafile Ltd.</copyright>
     <tags>seafile-client seafile syncing sharing admin foss cross-platform</tags>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/seafile-client</packageSourceUrl>

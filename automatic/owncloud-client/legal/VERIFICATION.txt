@@ -3,16 +3,16 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software have been downloaded from the listed download
-location on <https://owncloud.org/download/#install-clients>
+location on <https://owncloud.com/desktop-app/>
 and can be verified by doing the following:
 
-1. Download the following <https://download.owncloud.com/desktop/stable/ownCloud-2.6.0.13018.12690.msi>
+1. Download the following <https://download.owncloud.com/desktop/ownCloud/stable/2.8.2.4246/win/ownCloud-2.8.2.4246.x64.msi>
 2. Get the checksum using one of the following methods:
   - Using powershell function 'Get-FileHash'
   - Use chocolatey utility 'checksum.exe'
 3. The checksums should match the following:
 
   checksum type: sha256
-  checksum: F14244365E55DA230C233B3641E771FEC4A4A3BE72687091639568F3D2AEED97
+  checksum: A6B3648FBD20F61B7075216DB8660A3296758C0BBD1ADC869483F6015B5FF21D
 
 The file 'LICENSE.txt' has been obtained from <https://github.com/owncloud/client/blob/06936bc603c91b1c5f10442901bcfeb765b17243/COPYING>

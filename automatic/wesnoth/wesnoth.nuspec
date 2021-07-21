@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wesnoth</id>
-    <version>1.15.2-beta</version>
+    <version>1.15.15-beta</version>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/wesnoth</packageSourceUrl>
-    <owners>chocolatey</owners>
+    <owners>chocolatey-community</owners>
     <title>The Battle for Wesnoth</title>
     <authors>David White and others</authors>
     <projectUrl>http://www.wesnoth.org/</projectUrl>
@@ -16,7 +16,7 @@
     <projectSourceUrl>https://github.com/wesnoth/wesnoth</projectSourceUrl>
     <docsUrl>https://wiki.wesnoth.org/Support</docsUrl>
     <mailingListUrl>https://forums.wesnoth.org/</mailingListUrl>
-    <bugTrackerUrl>https://gna.org/bugs/index.php?group=wesnoth&amp;set=custom&amp;report_id=101&amp;status_id=1&amp;chunksz=150&amp;boxoptionwanted=1</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/wesnoth/wesnoth/issues/</bugTrackerUrl>
     <tags>wesnoth game strategy turn-based admin foss cross-platform</tags>
     <summary>The Battle for Wesnoth is a turn-based tactical strategy game with a high fantasy theme.</summary>
     <description><![CDATA[

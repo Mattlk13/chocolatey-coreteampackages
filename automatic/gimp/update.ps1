@@ -18,11 +18,12 @@ function global:au_GetLatest {
   $re        = '\.exe$'
   $url32     = $download_page.Links | ? href -match $re | select -first 1 -expand href | % { 'https:' + $_ }
 
-  $verRe     = '[-](?:setup(?:\-[\d]*)?)?|\.exe$'
-  $version32 = $url32 -split "$verRe" | select -last 1 -skip 2
+  $regex = "(?:[putesmigx]+)\-|\.exe"; $regex01 = "(\-)"; $regex02 = "RC"
+  $version32 = ((($url32 -split("\/"))[-1]) -replace($regex,"") )
+  if ($version32 -notmatch $regex02 ) { $version32 = $version32 -replace( $regex01, ".") }
   @{
     URL32    = $url32
-    Version  = $version32
+    Version  = Get-Version $version32
   }
 }
 

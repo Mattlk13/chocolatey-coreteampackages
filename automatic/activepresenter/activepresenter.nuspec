@@ -5,9 +5,9 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>activepresenter</id>
     <title>Active Presenter</title>
-    <version>7.5.10</version>
+    <version>8.5.0</version>
     <authors>Atomi Systems</authors>
-    <owners>chocolatey</owners>
+    <owners>chocolatey-community</owners>
     <summary>Screen Recording and Interactive eLearning Authoring Tool</summary>
     <description><![CDATA[
 All the necessary tools for recording screen and creating engaging screencast videos in a free application.
@@ -37,7 +37,7 @@ Activating with a license key will remove the watermark on appropriate outputs.
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@0798deaffb56c9b6ee759251c0948dec25b2b0f9/icons/activepresenter.png</iconUrl>
     <releaseNotes>https://atomisystems.com/updates/ActivePresenter/v7/releasenotes_v7.html</releaseNotes>
     <docsUrl>https://atomisystems.com/tutorials</docsUrl>
-    <bugTrackerUrl>https://atomisystems.com/community</bugTrackerUrl>
+    <bugTrackerUrl>https://talk.atomisystems.com/</bugTrackerUrl>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/activepresenter</packageSourceUrl>
     <licenseUrl>https://atomisystems.com/activepresenter-free-eula</licenseUrl>
     <dependencies>

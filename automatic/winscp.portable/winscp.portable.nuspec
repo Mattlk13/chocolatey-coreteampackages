@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>winscp.portable</id>
-    <version>5.15.3</version>
+    <version>5.19.1</version>
     <title>WinSCP (Portable)</title>
     <authors>Martin Přikryl</authors>
-    <owners>chocolatey, dtgm</owners>
+    <owners>chocolatey-community, dtgm</owners>
     <licenseUrl>https://winscp.net/docs/license</licenseUrl>
     <projectUrl>https://winscp.net/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@6528e6936f5dc088aa67e03532d06101cdf4ed70/icons/winscp.png</iconUrl>
@@ -33,10 +33,10 @@
 
 ]]></description>
     <summary>Open source free SFTP client, SCP client, FTPS client and FTP client</summary>
-    <releaseNotes>https://winscp.net/download/WinSCP-5.15.3-ReadMe.txt</releaseNotes>
+    <releaseNotes>https://winscp.net/download/WinSCP-5.19.1-ReadMe.txt</releaseNotes>
     <copyright>© 2000 Martin Přikryl</copyright>
     <tags>scp cli ssh sftp ftp remote file client foss admin</tags>
-    <projectSourceUrl>https://sourceforge.net/p/winscp/code/</projectSourceUrl>
+    <projectSourceUrl>https://github.com/winscp/winscp</projectSourceUrl>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/winscp.portable</packageSourceUrl>
     <docsUrl>https://winscp.net/docs/</docsUrl>
     <mailingListUrl>https://winscp.net/forum/index.php</mailingListUrl>

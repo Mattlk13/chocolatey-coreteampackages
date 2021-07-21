@@ -1,28 +1,35 @@
 import-module au
 
-$releases = 'https://graphviz.gitlab.io/_pages/Download/Download_windows.html'
+$releases = "https://graphviz.org/download"
+
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix -FileNameBase $Latest.FileName }
 
 function global:au_SearchReplace {
-   @{
+    @{
+        ".\tools\chocolateyInstall.ps1" = @{
+          '(?i)(^\s*file64\s*=\s*)(".*")'       = "`$1`"`$toolsPath\$($Latest.FileName64)`""
+        }
+
         ".\legal\VERIFICATION.txt" = @{
-          "(?i)(\s+x32:).*"     = "`${1} $($Latest.URL32)"
-          "(?i)(checksum32:).*" = "`${1} $($Latest.Checksum32)"
+          "(?i)(\s+x64:).*"                     = "`${1} $($Latest.URL64)"
+          "(?i)(checksum64:).*"                 = "`${1} $($Latest.Checksum64)"
         }
     }
 }
 
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge -NoSuffix }
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $download_page = Invoke-WebRequest -UseBasicParsing -Uri $releases
+  $re  = "stable_windows_10_cmake_Release.+\.exe"
+  $link = $download_page.links | ? outerHtml -match $re | select -first 1
+  $link.outerHtml -match '>(.+)</a>' | Out-Null
+  $fileName = $Matches[1]
 
-    $re    = '\.msi$'
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
-    $version  =  $url -split '-|\.msi' | select -Last 1 -Skip 1
-    @{
-        Version      = $version
-        URL32        = "https://graphviz.gitlab.io/_pages/Download/" + $url
-    }
+  @{
+    Version = $link.outerHTML -split '-' | select -Last 1 -Skip 1
+    URL64 = $link.href
+    FileName = $fileName
+    FileType = 'exe'
+  }
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckUrl

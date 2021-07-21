@@ -3,11 +3,11 @@
 $packageArgs = @{
   packageName            = 'lightworks'
   fileType               = 'EXE'
-  url                    = 'https://downloads.lwks.com/v14-5/lightworks_v14.5.0_full_32bit_setup.exe'
-  url64bit               = 'https://downloads.lwks.com/v14-5/lightworks_v14.5.0_full_64bit_setup.exe'
-  checksum               = 'a921c043b01d8804fc1365580a4cf29a4022d1812d1d5101d33eccc5fc978921'
-  checksum64             = '55b75aa1d8c35a49920576f59c4a9f336c9fa0498c8a0c580e2c2004ece594af'
-  checksumType           = 'sha256'
+  url                    = ''
+  url64bit               = 'https://cdn.lwks.com/releases/2021.2/lightworks_2021.2_r128258_64bit_setup.exe'
+  checksum               = ''
+  checksum64             = '9f3dfa9e375e975359d637179cb60ba23c999c8855ad109af129bb7ace2234e3'
+  checksumType           = ''
   checksumType64         = 'sha256'
   silentArgs             = '/S'
   validExitCodes         = @(0)

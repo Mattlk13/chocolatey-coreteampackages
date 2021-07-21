@@ -1,4 +1,4 @@
-$pp = Get-PackageParameters
+﻿$pp = Get-PackageParameters
 
 $is64 = (Get-OSArchitectureWidth 64) -and $env:chocolateyForceX86 -ne 'true'
 $dir_name = if ($is64) { 'msys64' } else { 'msys32' }
@@ -35,13 +35,13 @@ function Update-MSys2 {
     $logPath      = Join-Path $InstallPath update.log
     $stopSentence = 'there is nothing to do'
     $cntSentence  = 2
-    $shellArgs    = "pacman --noconfirm -Syuu | tee -a /update.log"
+    $shellArgs    = "pacman --noconfirm -Syuu --disable-download-timeout | tee -a /update.log"
     $max          = 5  
 
     Write-Host "Repeating system update until there are no more updates or max $max iterations"
     Write-Host "Output is recorded in: $logPath"
 
-    rm $logPath -ea 0
+    Remove-Item $logPath -ea 0
     $ErrorActionPreference = 'Continue'     #otherwise bash warnings will exit
     while (!$done) {
         Write-Host "`n================= SYSTEM UPDATE $((++$i)) =================`n"

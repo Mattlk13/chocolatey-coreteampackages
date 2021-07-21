@@ -5,8 +5,10 @@ $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'msi'
-  file           = "$toolsPath\inkscape-0.92.4-x86.msi"
-  file64         = "$toolsPath\inkscape-0.92.4-x64.msi"
+  url            = 'https://inkscape.org/gallery/item/26938/inkscape-1.1-x86.msi'
+  checksum       = '1D02A124E39F906BB6BAB7A7867967E12ECF1A8493A3718D3090392E54811AB9'
+  checksumType   = 'sha256'
+  file64         = "$toolsPath\inkscape-1.1-x64.msi"
   softwareName   = 'InkScape*'
   silentArgs     = "/qn /norestart /l*v `"$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
   validExitCodes = @(0)
@@ -14,13 +16,13 @@ $packageArgs = @{
 
 [array]$key = Get-UninstallRegistrykey $packageArgs['softwareName']
 if ($key.Count -eq 1) {
-  if ($key[0].DisplayVersion -eq '0.92.4') {
+  if ($key[0].DisplayVersion -eq '1.1') {
     Write-Host "Software already installed"
     return
   }
   else {
     # We need to do it this way, as PSChildName isn't available in POSHv2
-    $msiId = $key[0].UninstallString -replace '^.*MsiExec\.exe\s*\/I',''
+    $msiId = $key[0].UninstallString -replace '^.*MsiExec\.exe\s*\/I', ''
     Uninstall-ChocolateyPackage -packageName $packageArgs['packageName'] `
       -fileType $packageArgs['fileType'] `
       -silentArgs "$msiId $($packageArgs['silentArgs'] -replace 'MsiInstall','MsiUninstall')" `
@@ -35,14 +37,19 @@ elseif ($key.Count -gt 1) {
   Write-Warning "Please uninstall InkScape before installing this package."
 }
 
-Install-ChocolateyInstallPackage @packageArgs
+if ((Get-OSArchitectureWidth 32) -or ($env:chocolateyForceX86 -eq $true)) {
+  Install-ChocolateyPackage @packageArgs
+}
+else {
+  Install-ChocolateyInstallPackage @packageArgs
+}
 
 Get-ChildItem $toolsPath\*.msi | ForEach-Object { Remove-Item $_ -ea 0; if (Test-Path $_) { Set-Content "$_.ignore" } }
 
 $packageName = $packageArgs.packageName
 $installLocation = Get-AppInstallLocation $packageArgs['softwareName']
 if ($installLocation) {
-  Install-BinFile 'inkscape' $installLocation\inkscape.exe
+  Install-BinFile 'inkscape' $installLocation\bin\inkscape.exe
   Write-Host "$packageName installed to '$installLocation'"
 }
 else { Write-Warning "Can't find $PackageName install location" }

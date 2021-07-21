@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$shortversion = '81'
+$shortversion = '82'
 $pp = Get-PackageParameters
 
 . $toolsDir\helpers.ps1
@@ -9,8 +9,8 @@ $installDir = Get-InstallDir
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $installDir
-  file          = "$toolsDir\gvim_8.1.2300_x86.zip"
-  file64        = "$toolsDir\gvim_8.1.2300_x64.zip"
+  file          = "$toolsDir\gvim_8.2.3192_x86.zip"
+  file64        = "$toolsDir\gvim_8.2.3192_x64.zip"
 }
 
 $installArgs = @{
@@ -22,5 +22,6 @@ $installArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 Start-ChocolateyProcessAsAdmin @installArgs
-Copy-Item "$installDir\vim\vim$shortversion\vimtutor.bat" $env:windir
+Copy-Item -Path "$installDir\vim\vim$shortversion\vimtutor.bat" -Destination $env:windir
 Set-Content -Path "$toolsDir\installDir" -Value $installDir
+Create-SymbolicLink

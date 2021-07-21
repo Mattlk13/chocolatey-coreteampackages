@@ -4,8 +4,8 @@ $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
   packageName = $env:ChocolateyPackageName
-  file        = "$toolsPath\cmake-3.16.0-rc3-win32-x86.zip"
-  file64      = "$toolsPath\cmake-3.16.0-rc3-win64-x64.zip"
+  file        = "$toolsPath\cmake-3.21.0-windows-i386.zip"
+  file64      = "$toolsPath\cmake-3.21.0-windows-x86_64.zip"
   destination = $toolsPath
 }
 

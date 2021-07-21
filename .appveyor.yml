@@ -4,7 +4,7 @@ version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
 max_jobs: 1
-#image: Visual Studio 2015
+image: Visual Studio 2017
 # History plugin requires complete log
 #clone_depth: 5
 branches:
@@ -23,7 +23,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: chocolatey-community/chocolatey-coreteampackages
   github_api_key:
-    secure: 7tqvwsSAEGnwr0bYwegIsNBje1pqjdhHEoclLBQOR5HF0SOGw48Ls1OBpAimSlsf
+    secure: kp3pFdeqA90uVX4Yy2F5obA/O+P1428LrtCiuYZQYUMkSYi6yWTdmv35tOoce1k8
 
   # Gitter Integration
   gitter_webhook:
@@ -54,7 +54,7 @@ environment:
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
-- git config --global user.name "Chocolatey"
+- git config --global user.name "Chocolatey Community"
 - git config --global core.safecrlf false
 
 install:
@@ -63,7 +63,8 @@ install:
     if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
     @{
       'chocolatey' = $chocoVersion
-      'wormies-au-helpers' = '0.3.2'
+      'wormies-au-helpers' = '0.4.1'
+      'autohotkey.install' = '1.1.33.02'
     }.GetEnumerator() | % {
       if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
       if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} --allow-downgrade --pre }

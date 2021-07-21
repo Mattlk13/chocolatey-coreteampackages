@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mpc-hc-clsid2</id>
-    <version>1.8.8</version>
+    <version>1.9.14</version>
     <title>MPC-HC (fork by clsid2)</title>
-    <owners>chocolatey,jack1142</owners>
+    <owners>chocolatey-community,jack1142</owners>
     <authors>clsid2, MPC-HC Team</authors>
     <licenseUrl>https://github.com/clsid2/mpc-hc/blob/develop/COPYING.txt</licenseUrl>
     <projectUrl>https://github.com/clsid2/mpc-hc</projectUrl>

@@ -3,8 +3,8 @@
   <metadata>
     <id>krita</id>
     <title>Krita</title>
-    <version>4.2.7.1</version>
-    <owners>chocolatey,dtgm,KDE</owners>
+    <version>4.4.3</version>
+    <owners>chocolatey-community,dtgm,KDE</owners>
     <summary>Krita is a sketching and painting program designed for digital artists.</summary>
     <description><![CDATA[Krita is a FREE and open source painting tool designed for concept artists, illustrators, matte and texture artists, and the VFX industry. Krita has been in development for over 10 years and has had an explosion in growth recently. It offers many common and innovative features to help the amateur and professional alike. See below for some of the highlighted features.
 
@@ -35,7 +35,7 @@
     <projectUrl>https://krita.org/</projectUrl>
     <projectSourceUrl>https://github.com/KDE/krita</projectSourceUrl>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/krita</packageSourceUrl>
-    <docsUrl>https://docs.krita.org/Main_Page</docsUrl>
+    <docsUrl>https://docs.krita.org/en/index.html</docsUrl>
     <bugTrackerUrl>https://bugs.kde.org/buglist.cgi</bugTrackerUrl>
     <tags>admin foss multimedia cross-platform krita sketching painting kde qt</tags>
     <licenseUrl>https://github.com/KDE/krita/blob/master/COPYING</licenseUrl>

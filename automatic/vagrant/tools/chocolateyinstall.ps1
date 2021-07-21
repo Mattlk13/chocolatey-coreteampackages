@@ -1,12 +1,12 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
   packageName    = 'vagrant'
   fileType       = 'msi'
-  url            = 'https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_i686.msi'
-  url64bit       = 'https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.msi'
-  checksum       = 'c4f760748998598f5370ef6b4860fdaf7a66ffbe4caa8f39d87543a5b15ed136'
-  checksum64     = '4e9d2617dc2e1d194cdf8c7fbdc4041cef43e770baecbadbfed6c74fc4f5b98c'
+  url            = 'https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_i686.msi'
+  url64bit       = 'https://releases.hashicorp.com/vagrant/2.2.17/vagrant_2.2.17_x86_64.msi'
+  checksum       = 'be673db325317997427fb4b49706a0c8130e8a2d882cfffbf7a0cfb6d824fb6a'
+  checksum64     = '96b1d9b2cd95cff9031b5c7902dcc1789f4e51685bfbeb816f1bd5239831f215'
   checksumType   = 'sha256'
   checksumType64 = 'sha256'
   silentArgs     = "/qn /norestart"

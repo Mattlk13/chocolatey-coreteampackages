@@ -3,11 +3,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>kitty</id>
-    <version>0.73.1.1</version>
+    <version>0.74.4.13</version>
     <title>KiTTY</title>
     <authors>Cyril Dupont</authors>
-    <owners>chocolatey, Andre-Patrick Bubel, Miodrag Milic</owners>
-    <licenseUrl>https://raw.githubusercontent.com/majkinetor/au-packages/master/kitty/legal/LICENCE.TXT</licenseUrl>
+    <owners>chocolatey-community, Andre-Patrick Bubel, Miodrag Milic</owners>
+    <licenseUrl>https://raw.githubusercontent.com/chocolatey-community/chocolatey-coreteampackages/master/automatic/kitty/legal/LICENSE.TXT</licenseUrl>
     <projectUrl>https://www.9bis.net/kitty/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@8d5f606c792f368dcb854727252429e4aaa13516/icons/kitty.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -25,7 +25,8 @@ Example: `choco install kitty --params "/Portable"`
 
 ## Notes
 
-- Package can not get updated or uninstalled if any of the kitty processes is running. For safety resons you need to manually shut them down.
+- This package is know to have **false positives** on Virus Total for some of its executables which is no cause for concern. For more details see [GitHub issue](https://github.com/chocolatey-community/chocolatey-coreteampackages/issues/1563).
+- Package can not get updated or uninstalled if any of the kitty processes is running. For safety reasons you need to manually shut them down.
 
 ![screenshot](https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/master/automatic/kitty/screenshot.png)
 ]]></description>

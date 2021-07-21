@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Everything</id>
-    <version>1.4.1935.20190602</version>
+    <version>1.4.11009</version>
     <title>Everything</title>
     <authors>David Carpenter</authors>
-    <owners>chocolatey, Mark Michaelis</owners>
+    <owners>chocolatey-community, Mark Michaelis</owners>
     <licenseUrl>http://www.voidtools.com/License.txt</licenseUrl>
     <projectUrl>http://www.voidtools.com</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@cf277846cf6b5436461ebd5f21b00efd67ee9910/icons/everything.png</iconUrl>

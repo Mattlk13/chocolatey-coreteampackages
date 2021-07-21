@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
    <metadata>
     <id>paint.net</id>
-    <version>4.2.5</version>
+    <version>4.2.16</version>
     <title>Paint.NET</title>
     <authors>Rick Brewster, dotPDN</authors>
     <projectUrl>http://www.getpaint.net/</projectUrl>
@@ -36,7 +36,7 @@ An active and growing online community provides friendly help, tutorials, and pl
     </summary>
     <tags>paint.net photo editing paint graphics image freeware admin</tags>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/paint.net</packageSourceUrl>
-    <owners>chocolatey, the-running-dev</owners>
+    <owners>chocolatey-community, the-running-dev</owners>
     <releaseNotes>https://www.getpaint.net/roadmap.html</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.3.3" />

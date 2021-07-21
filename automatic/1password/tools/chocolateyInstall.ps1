@@ -3,12 +3,19 @@
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
-  url            = 'https://c.1password.com/dist/1P/win6/1PasswordSetup-7.3.705.exe'
+  url            = 'https://c.1password.com/dist/1P/win6/1PasswordSetup-7.7.810.exe'
   softwareName   = '1Password*'
-  checksum       = '51d40968ea17d497bc2360987d3b3f9e626020d2c954fa12bbdf18391cebeeaa'
+  checksum       = '964bc6d616bea36139583961d002ae58039bd96645b71314b4126364cf838931'
   checksumType   = 'sha256'
-  silentArgs     = '--log_path .'
+  silentArgs     = "--silent"
   validExitCodes = @(0)
+}
+
+if ($env:ChocolateyPackageName -eq "1password4") {
+  $cache_dir = Get-PackageCacheLocation
+}
+else {
+  $cache_dir = Join-Path -Path $env:LocalAppData -ChildPath "1password\logs\setup"
 }
 
 # Installer blocks at the end and never returns. Successifull installation is visible in the log file
@@ -18,15 +25,15 @@ Start-Job -ScriptBlock { param($cache_dir)
 
   while ($seconds -lt $max_seconds) {
     Start-Sleep 1; $seconds++
-    
-    $logFilePath = Get-ChildItem $cache_dir\*.log -Recurse | Select-Object -First 1    
+
+    $logFilePath = Get-ChildItem $cache_dir\*.log -Recurse | Select-Object -First 1
     if (!$logFilePath) { continue }
-    
+
     $log = Get-Content $logFilePath
-    if ($log -like '*Installation successful!') {
+    if ($log -like '*Installation successful!' -or $log -like '*Installation completed successfully!*') {
       Get-Process $env:ChocolateyPackageName -ea 0 | Stop-Process
       exit
     }
   }
-} -ArgumentList (Get-PackageCacheLocation)
+} -ArgumentList ($cache_dir)
 Install-ChocolateyPackage @packageArgs

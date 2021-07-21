@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$fileName  = 'AutoHotkey_1.1.31.01.zip'
+$fileName  = 'AutoHotkey_2.0-a138-7538f26f.zip'
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $zip_path = "$toolsPath\$fileName"
 Remove-Item $toolsPath\* -Recurse -Force -Exclude $fileName
@@ -15,12 +15,12 @@ Remove-Item $zip_path -ea 0
 
 Write-Host "Removing ANSI-32 version"
 Remove-Item "$toolsPath/AutoHotkeyA32.exe" -ea 0
-if (Get-OSArchitectureWidth 64 -and ($Env:chocolateyForceX86 -ne 'true')) {
+if ((Get-OSArchitectureWidth 64) -and ($Env:chocolateyForceX86 -ne 'true')) {
     Write-Verbose "Removing UNICODE-32 version"
     Remove-Item "$toolsPath/AutoHotkeyU32.exe" -ea 0
     Move-Item "$toolsPath/AutoHotkeyU64.exe" "$toolsPath/AutoHotkey.exe" -Force
 } else {
-    Write-Verbose "Removing UNICODE-64  version"
+    Write-Verbose "Removing UNICODE-64 version"
     Remove-Item "$toolsPath/AutoHotkeyU64.exe" -ea 0
     Move-Item "$toolsPath/AutoHotkeyU32.exe" "$toolsPath/AutoHotkey.exe" -Force
 }

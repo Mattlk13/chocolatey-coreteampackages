@@ -3,12 +3,12 @@
 $toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
-  packageName    = 'zotero-standalone'
+  packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
   silentArgs     = '/S'
   validExitCodes = @(0)
-  softwareName   = 'Zotero Standalone *'
-  file           = "$toolsPath\Zotero-5.0.77_setup.exe"
+  softwareName   = 'Zotero'
+  file           = "$toolsPath\Zotero-5.0.96.2_setup.exe"
 }
 
 Install-ChocolateyInstallPackage @packageArgs

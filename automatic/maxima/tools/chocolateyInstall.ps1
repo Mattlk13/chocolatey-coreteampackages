@@ -3,12 +3,12 @@
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
-  url            = 'https://sourceforge.net/projects/maxima/files/Maxima-Windows/5.43.0-Windows/maxima-clisp-sbcl-5.43.0-win32.exe/download'
-  url64bit       = 'https://sourceforge.net/projects/maxima/files/Maxima-Windows/5.43.0-Windows/maxima-clisp-sbcl-5.43.0-win64.exe/download'
+  url            = 'https://sourceforge.net/projects/maxima/files/Maxima-Windows/5.45.1-Windows/maxima-5.45.1s-win32.exe/download'
+  url64bit       = 'https://sourceforge.net/projects/maxima/files/Maxima-Windows/5.45.1-Windows/maxima-5.45.1s-win64.exe/download'
   softwareName   = 'maxima*'
-  checksum       = '15e4f8ed26b763647c3870bac0cb371869764ee30878fd1767505dd30d54012f'
+  checksum       = 'fe385011593da096be0929426fe93e0ccd32f4fc4a7bf8c3f0bbdae78d73317b'
   checksumType   = 'sha256'
-  checksum64     = '52cb2fe1218287a5381d71a14ac1466661748267f1c3bd959ff7c50df47f05fd'
+  checksum64     = '60be72a45376e1256a554d79e7da35f7d91cfc86b12b9a9a5501c0f5ed8b6de0'
   checksumType64 = 'sha256'
   silentArgs     = '/S'
   validExitCodes = @(0)

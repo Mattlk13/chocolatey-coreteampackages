@@ -26,15 +26,14 @@ function GetLocale {
   #$availableLocales = Get-WebContent $localeUrl 2>$null
   $availableLocales = Get-Content $localeFile | ForEach-Object { $_ -split '\|' | Select-Object -first 1 } | Select-Object -Unique
 
-  $packageParameters = $env:chocolateyPackageParameters
+  $PackageParameters = Get-PackageParameters
 
-  $packageParameters = if ($packageParameters -ne $null) { $packageParameters } else { "" }
-
-  $argumentMap = ConvertFrom-StringData $packageParameters
-  $localeFromPackageParameters = $argumentMap.Item('l')
-  Write-Verbose "User chooses '$localeFromPackageParameters' as a locale..."
-  $localeFromPackageParametersTwoLetter = $localeFromPackageParameters -split '\-' | Select-Object -first 1
-  Write-Verbose "With fallback to '$localeFromPackageParametersTwoLetter' as locale..."
+  if ($PackageParameters['l']) {
+    $localeFromPackageParameters =  $PackageParameters['l']
+    Write-Verbose "User chooses '$localeFromPackageParameters' as a locale..."
+    $localeFromPackageParametersTwoLetter = $localeFromPackageParameters -split '\-' | Select-Object -first 1
+    Write-Verbose "With fallback to '$localeFromPackageParametersTwoLetter' as locale..."
+    }
 
   $uninstallPath = GetUninstallPath -product $product
 
@@ -43,7 +42,7 @@ function GetLocale {
 
   $systemLocalizeAndCountry = (Get-UICulture).Name
   $systemLocaleTwoLetter = (Get-UICulture).TwoLetterISOLanguageName
-  Write-Verbose "System locale is: '$locale'..."
+  Write-Verbose "System locale is: '$systemLocalizeAndCountry'..."
   $fallbackLocale = 'en-US'
 
   $locales = $localeFromPackageParameters,$localeFromPackageParametersTwoLetter, `
@@ -53,7 +52,7 @@ function GetLocale {
     foreach ($locale in $locales) {
       $localeMatch = $availableLocales | Where-Object { $_ -eq $locale } | Select-Object -first 1
       if ($localeMatch -and $locale -ne $null) {
-        Write-Verbose "Using locale '$locale'..."
+        Write-Host "Using locale '$locale'..."
         break
       }
     }

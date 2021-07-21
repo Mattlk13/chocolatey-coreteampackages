@@ -3,18 +3,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>spotify</id>
-    <version>1.1.19.480</version>
+    <version>1.1.63.568</version>
     <title>Spotify</title>
     <authors>Spotify</authors>
     <projectUrl>http://spotify.com</projectUrl>
     <docsUrl>https://support.spotify.com</docsUrl>
     <mailingListUrl>https://community.spotify.com</mailingListUrl>
-    <owners>chocolatey,ferventcoder</owners>
+    <owners>chocolatey-community,ferventcoder</owners>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/spotify</packageSourceUrl>
     <licenseUrl>https://www.spotify.com/us/legal/end-user-agreement/</licenseUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@4ad26e5a5ab2b5280e4d57e5b14fcc9d4c6a22c5/icons/spotify.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description><![CDATA[
+    <description><![CDATA[Spotify is a digital music service that gives you access to millions of songs.
+
+## Features
+
 - Music  
 There are millions of songs on Spotify. Play your favorites, discover new tracks, and build the perfect collection.
 - Playlists  
@@ -27,13 +30,6 @@ Know what you want to listen to? Just search and hit play.
 Check out the latest charts, brand new releases and great playlists for right now.
 - Discover  
 Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio.
-
-## Features
-
-- Millions of tracks, any time you like.
-- Search for it in Spotify, then play it.
-- Help yourself to whatever you want, whenever you want it.
-
 ]]></description>
     <summary>Spotify is a new way to listen to music</summary>
     <copyright>Copyright © 2017 Spotify AB</copyright>

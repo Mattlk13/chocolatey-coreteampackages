@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>alldup</id>
-    <version>4.4.8.20191030</version>
+    <version>4.4.56</version>
     <title>AllDup</title>
-    <owners>chocolatey</owners>
+    <owners>chocolatey-community</owners>
     <authors>Michael Thummerer Software Design</authors>
     <licenseUrl>http://www.alldup.de/alldup_help/alldup.htm</licenseUrl>
     <projectUrl>http://www.alldup.de/en_index.php</projectUrl>
